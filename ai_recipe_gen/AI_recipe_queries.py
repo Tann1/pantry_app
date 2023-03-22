@@ -96,9 +96,10 @@ def ai_recipe(recipe: str, listOfIngredients: list) -> None:
             3. Pour into two glasses and enjoy!
     """
     assert len(listOfIngredients) > 0, "ingredients list is empty"
+    assert len(recipe) > 0, "recipe is an empty string"
+    
     ingredients = ", ".join(listOfIngredients)
     prompt = f"Generate a recipe for {recipe} using {ingredients} and try to avoid including any unnecessary ingredients."
-    assert bool(prompt), "Prompt is empty"
     open_ai_call(prompt)
 
 
